@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #invitationText {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        #currentDate {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Invitation</h1>
+        <div id="invitationText"></div>
+        <p>Date: <span id="currentDate"></span></p>
+    </div>
+
+    <script>
+        function generateInvitation() {
+            const invitationText = document.getElementById('invitationText');
+            const currentDate = document.getElementById('currentDate');
+            
+            // Generate a random event
+            const events = ['party', 'conference', 'workshop', 'seminar', 'gathering'];
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            
+            // Set invitation text
+            invitationText.textContent = `We handle your guest invitations and follow-ups so you can unwind and warmly welcome them.`;
+            
+            // Set current date
+            const today = new Date();
+            currentDate.textContent = today.toDateString();
+        }
+
+        // Run the function when the page loads
+        window.onload = generateInvitation;
+    </script>
+</body>
+</html>
